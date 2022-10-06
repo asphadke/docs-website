@@ -25,8 +25,6 @@ The CPM uses a mounted volume (Docker) or persistent volume and claim (K8s) for 
 The synthetics job manager will reuse a single Docker network to communicate with runtime containers. In contrast, the CPM created a new Docker network for each non-ping job execution, which sometimes resulted in Docker IP range exhaustion and internal engine errors due to the volume of networks.
 
 **Temporary limitations**
-Ping monitor jobs cannot be routed to the synthetics job manager yet. This will be addressed short term and in a way that the ping monitor jobs can be load balanced between synthetics job manager and the containerized private minion (CPM). Migrations and runtime upgrades can occur if both are configured for the same private location.
- 
 A few less frequently used capabilities in the CPM are not yet available in the synthetics job manager. These include:
  
 * SSL certificate expiration, broken link, and step monitors are not yet supported in the Chrome 100 / Node 16 runtimes
